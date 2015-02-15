@@ -7,8 +7,15 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
+var expstate = require('express-state');
 var app = express();
+var config = require('xtconf')();
+
+expstate.extend(app);
+//epose data
+app.expose({
+    locations: config.get('locations')
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
