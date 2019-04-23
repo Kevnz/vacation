@@ -16,14 +16,18 @@
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
     <div id="map-canvas"></div>
-    
+
     <script type="text/javascript">
-    <%- state %>
+    (function (root) {
+/* -- Data -- */
+root.locations = <%- locations %>
+
+}(this));
+
 
 //Take a subway (http://web.mta.info/maps/submap.html)
 
       function initialize() {
-        console.log('init');
         //40.712784, -74.005941
         var mapOptions = {
           center: { lat: 40.712, lng: -74.005},
@@ -41,7 +45,6 @@
             locations[i]
         };
       }
-      console.log('the js')
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
   </body>
