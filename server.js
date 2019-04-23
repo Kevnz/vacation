@@ -1,16 +1,13 @@
-var app = require('./app'); 
-var http = require('http');
 
-/**
- * Get port from environment and store in Express.
- */
+require('xtconf')()
+const cling = require('static-cling')
 
-var port =  process.env.PORT;
-app.set('port', port);
-var server = http.createServer(app);
 
-/**
- * Listen on provided port, on all network interfaces.
- */
+const port =  process.env.PORT;
 
-server.listen(port); 
+const config = {
+  root: './dist',
+  port: port,
+  filename: 'index.html'
+}
+cling(config)
