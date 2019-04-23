@@ -1,3 +1,3 @@
 const cleaner = require('./scripts/clean')
 
- cleaner().then(()=> console.log('?'))
+ cleaner().then(()=> console.log('Cleaned'))

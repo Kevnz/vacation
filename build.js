@@ -1,3 +1,3 @@
 const builder = require('./scripts/build')
 
-builder().then(()=> console.log('?'))
+builder().then(()=> console.log('Built'))
