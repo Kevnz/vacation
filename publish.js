@@ -1,3 +1,3 @@
 const publisher = require('./scripts/publish')
 
-publish().then(()=> console.log('Published'))
+publisher().then(()=> console.log('Published'))
